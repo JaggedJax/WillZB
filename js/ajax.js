@@ -121,25 +121,3 @@ function search_results(response){
 		}
 	}
 }
-
-/* CIO FUNCTIONS for examples */
-function HandleAccountStatus(response){
-	var resultArray = response.split('&');
-	var status = 'Inactive';
-	if (resultArray[2] == 'A')
-		status = 'Active';
-	document.getElementById("status").innerHTML = status;
-	document.getElementById("used").innerHTML = "$"+resultArray[1];
-	document.getElementById("balance").innerHTML = "$"+resultArray[0];
-	disable_div('loading');
-	enable_div('account');
-}
-
-function DailyCloseout(response){
-	if (response.substring(0, 9) == "index.php")
-		location.href = response;
-	else{
-		alert("An error occurred and the closeout failed. Please try again.\nError: "+response);
-		location.href = "index.php?p=daily_closeout";
-	}
-}
