@@ -51,6 +51,14 @@ foreach ($data as $result){
 				case 'usenetdate':
 					$results[$c]['USENET_DATE'] = $attribute['@attributes']['value'];
 					break;
+				case 'coverurl':
+					$results[$c]['IMAGE'] = $attribute['@attributes']['value'];
+					break;
+				case 'backdropcoverurl':
+					if (!$results[$c]['IMAGE']){
+						$results[$c]['IMAGE'] = $attribute['@attributes']['value'];
+					}
+					break;
 			}
 		}
 
@@ -66,7 +74,7 @@ foreach ($data as $result){
 		$time = gmdate("U", time());
 		$results[$c]['INDEX_AGE'] = $nh->seconds_to_readable($time - $results[$c]['INDEX_DATE']);
 		$results[$c]['USENET_AGE'] = $nh->seconds_to_readable($time - $results[$c]['USENET_DATE']);
-		if (@$result['image'])
+		if (@$results[$c]['IMAGE'])
 			list($results[$c]['IMGWIDTH'], $results[$c]['IMGHEIGHT']) = getimagesize($result['image']);
 		$c++;
 	}
