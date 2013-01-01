@@ -1,0 +1,441 @@
+/*
+color 1: 009900  main green
+color 2: 006b00  dark green
+color 3: fecb00  gold yellow
+color 4: fe9834  orange
+color 5: bfffbf  pale green
+color 6: 80FF80  light green
+color 7: 005899  blue gray
+*/
+
+html, body, ol, p, h1, h2, h3, h4, h5, h6, form, fieldset, a { 
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+} 
+
+body {
+	background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	margin: 10px;
+}
+
+h3 {
+	color: #009900;
+	font-size: 10pt;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.h3 {
+	color: #009900;
+	font-size: 10pt;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+#header {
+	height: 100px;
+	position: relative;
+}
+
+#footer {
+	float: right;
+}
+
+#centered {
+	height: 30%;
+	position: absolute;
+	left: 40%;
+	top: 35%;
+	width: 50%;
+}
+
+#headertop {
+    height: 25px;
+}
+
+#mainmenu {
+	padding-bottom: 15px;
+	padding-top: 35px;
+	position: absolute;
+	width: 100%;
+}
+
+#mainav {
+/*	display: inline;
+	list-style: none; */
+	margin: 0 auto;
+	width: 817px; 
+}
+
+#mainav li {
+        background: #3a507f;
+        display: block;
+        float: left;
+        margin-right: 2px;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        width: 100px;
+}
+
+#mainav li.active {
+        background: #658bc9;
+        margin-top: 0;
+        padding-top: 10px;
+}
+
+#mainav a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+		font-weight: bold;
+        text-decoration: none;
+        color: #dbe5ff;
+}
+
+#subnav {
+	background: #658bc9;
+	clear: both;
+/*	margin-top: 2px; */
+	padding: 6px;
+}
+
+#subnav li {
+	background: #658bc9;
+	border-right: 1px solid #dbe5ff;
+	display: inline;
+	margin-top: 15px;
+	padding: 6px;
+}
+
+#subnav li.active {
+	background: #917023;
+}
+
+#subnav a {
+        font-size: 10pt;
+        text-decoration: none;
+        color: #dbe5ff;
+}
+
+/* Page Tabs */
+#pagenav {
+	clear: both;
+/*	margin-top: 2px; */
+	padding: 2px;
+	height: 25px;
+	position: relative;
+}
+
+#pagenav li {
+        background: #067500;
+        display: block;
+        float: left;
+        margin-right: 2px;
+        margin-top: 2px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+		padding-left: 2px;
+        padding-right: 2px;
+        text-align: center;
+        min-width: 100px;
+}
+
+#pagenav li.active {
+        background: #2D9B27;
+        margin-top: 0;
+        padding-top: 4px;
+}
+
+#pagenav a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+		font-weight: bold;
+        text-decoration: none;
+        color: #AFFA9A;
+}
+/* End Page Tabs */
+
+
+#maincontent {
+	border: 2px solid #fecb00;
+	margin-bottom: 10px;
+	padding: 10px;
+	position: relative;
+	overflow: auto;
+}
+
+#maincontentnoboarder {
+	position: relative;
+	overflow: auto;
+}
+
+#mainblurb {
+	border-right: 1px solid #fecb00;
+	padding-right: 10px;
+	width: 350px;
+}
+
+#searchbox {
+	left: 390px;
+	position: absolute;
+	top: 10px;
+}
+
+#subcontent {
+	position: relative;
+}
+
+#subblurb {
+	border: 1px solid #009900;
+	border-bottom: 15px solid #009900;
+	margin-right: 190px;
+	padding: 10px;
+}
+
+#subblurb h4 {
+	background: #009900;
+	color: #fff;
+	font-size: 10pt;
+	padding: 2px 5px;
+}
+
+#quickbox {
+	border: 1px solid #009900;
+	padding: 10px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 150px;
+}
+
+#quickbox span {
+	color: #fe9834;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#logo {
+	position: absolute;
+	top: 0;
+	left: 5px;
+/*	z-index: 0; */
+}
+
+#loginform {
+    float: right;
+}
+
+#logoutspan {
+    float: right;
+}
+#name {
+}
+
+#servermessage {
+	color: #BB0000;
+	font-size: 12pt;
+}
+
+#servermessage.goodmessage {
+	color: green;
+	font-size: 12pt;
+}
+
+.div_border {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #888888;
+	display: inline-block;
+}
+
+.browse tr.head {
+	background: #fc3 !important;
+	font-size: 9pt !important;
+	padding: 2px 5px 2px 5px !important;
+}
+
+.browse th {
+	font-size: 9pt;
+	padding: 2px 5px 2px 5px;
+}
+
+.browse td {
+	font-size: 9pt;
+	padding: 2px 5px 2px 5px;
+}
+
+.pointer td {
+	cursor: pointer;
+}
+
+.printable td {
+	font-size: 12pt;
+	height: 35px;
+	top: 50%;
+	vertical-align: middle;
+}
+
+.narrow {
+	width: 1px;
+}
+
+#import_preview {
+	background-color: #eec;
+	border: 2px solid #fecb00;
+	height: 500px;
+	left: 300px;
+	overflow: auto;
+	padding: 10px;
+	position: absolute;
+	top: 50px;
+	visibility: hidden;
+	width: 400px;
+}
+
+/* tabs */
+.tabs {
+	border-bottom: 2px solid #009900;
+	clear: both;
+	height: 20px;
+	list-style: none;
+}
+
+.tabs li {
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	width: 100px;
+}
+
+.tabs li a {
+	background-color: #006b00;
+	color: #fe9834;
+	display: block;
+	font-weight: bold;
+	height: 18px;
+	padding: 0 3px 0 3px;
+	text-decoration: none;
+}
+
+.tabs a.active {
+	background-color: #009900;
+	color: yellow;
+	height: 20px;
+}
+/* end tabs */
+
+.spacer {
+	padding-right: 30px;
+}
+
+.browse tr:nth-child(even) {
+    background-color: #eec;
+}
+
+.highlight {
+	background: #ab5;
+}
+.highlight:nth-child(even) {
+	background: #ab5 !important;
+}
+
+.selected {
+	background: #80ff80;
+}
+
+.red {
+	color: #BB0000;
+}
+
+.green {
+	color: #00EE11;
+}
+
+.yellowbg {
+	background: #ffffd2;
+}
+
+/* No floating elements allwoed on the left */
+.clearleft {
+	clear: left;
+}
+
+.fn {
+	font-weight: bold;
+}
+
+.topleft {
+    vertical-align: top;
+    text-align: left;
+}
+
+.tip {
+	font:12px/14px Arial,Helvetica,sans-serif;
+	border:solid 1px #666666;
+	width:270px;
+	padding:1px;
+	position:absolute; 
+	z-index:100;
+	visibility:hidden;
+	color:#333333;
+	top:20px;
+	left:90px;
+	background-color:#ffffcc;
+/*	layer-background-color:#ffffcc; */
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+.visible {
+	display: block;
+	visibility: visible;
+	vertical-align: middle;
+}
+
+.floatleft {
+	float: left
+}
+
+.floatright {
+	float: right
+}
+
+.indent {
+	margin-left: 20px;
+}
+.indent_2 {
+	margin-left: 40px;
+}
+.indent_3 {
+	margin-left: 60px;
+}
+
+.inline {
+	display: inline;
+}
+
+.block {
+	display: block;
+}
+
+#nav_between {
+	display:none;
+	visibility: hidden;
+}
+
+/* Images */
+td.redx {
+    background-image:url(../images/red_x_desktop.png);
+    height:13px;
+    width:13px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* END Images */

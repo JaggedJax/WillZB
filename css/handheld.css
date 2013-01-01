@@ -1,0 +1,458 @@
+#allcontent {
+	position: absolute;
+	width: 100%;
+	left: 0px;
+}
+
+#header {
+	height: 47px;
+	position: relative;
+}
+
+#footer {
+	float: right;
+	display: block;
+}
+
+#centered {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#mainmenu {
+	padding-bottom: 15px;
+	padding-top: 10px;
+	position: relative;
+	width: 100%;
+}
+
+/* Page Tabs */
+#pagenav {
+	padding: 1px;
+	height: 23px;
+}
+
+#pagenav li {
+        margin-right: 1px;
+        margin-top: 2px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+		padding-left: 1px;
+        padding-right: 1px;
+        text-align: center;
+        min-width: 10px;
+}
+
+#pagenav li.active {
+        padding-top: 4px;
+}
+
+#pagenav a {
+        font-size: 10pt;
+		font-weight: bold;
+}
+/* End Page Tabs */
+
+#maincontent {
+	width: 100%;
+	border: 2px solid #fecb00;
+	margin-bottom: 5px;
+	margin: 0 auto;
+	padding: 0px;
+	overflow: auto;
+	display: table !important;
+}
+
+#mainblurb {
+	border-right: 1px solid #fecb00;
+	padding-right: 5px;
+	width: 350px;
+}
+
+#searchbox {
+	left: 390px;
+	position: absolute;
+	top: 10px;
+}
+
+#subcontent {
+	position: relative;
+}
+
+#subblurb {
+	border: 1px solid #009900;
+	border-bottom: 10px solid #009900;
+	margin-right: 190px;
+	padding: 5px;
+}
+
+#subblurb h4 {
+	background: #009900;
+	color: #fff;
+	font-size: 10pt;
+	padding: 2px 4px;
+}
+
+#quickbox {
+	border: 1px solid #009900;
+	padding: 10px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 150px;
+}
+
+#quickbox span {
+	color: #fe9834;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#logo {
+	position: absolute;
+	top: 0;
+	left: 0px;
+}
+
+#servermessage {
+	color: red;
+	font-size: 12pt;
+}
+
+.div_border {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #888888;
+	display: inline-block;
+}
+
+table.browse {
+	width:100%; table-layout:fixed;
+}
+
+.fluidcell {
+	width:auto;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+.browse tr.head {
+	padding: 0px 2px 1px 0px;
+	overflow:hidden;
+}
+
+.browse th {
+	padding: 0px 2px 1px 0px;
+	overflow:hidden;
+}
+
+.browse td {
+	padding: 0px 2px 1px 0px;
+	overflow:hidden;
+	white-space:nowrap;
+	width:100%;
+}
+
+/** Table Column Modifiers **/
+
+/* size column width*/
+ th.size, td.size {
+	width: 60px;
+}
+
+/* time left column width*/
+ th.timeleft, td.timeleft {
+	width: 60px;
+}
+
+/* status column width*/
+ th.status, td.status {
+	width: 60px;
+}
+
+/* progress column width*/
+ th.progress, td.progress {
+	width: 70px;
+}
+progress {
+	width: 70px;
+}
+
+/* hits/comments column width*/
+ th.hits, td.hits {
+	display: none;
+}
+
+/* plus column width*/
+ th.plus, td.plus {
+	width: 10px;
+}
+
+/* age column width*/
+ th.age, td.age {
+	width: 35px;
+}
+
+/* pause column width*/
+ th.pause, td.pause {
+	width: 15px;
+}
+
+/* position column width*/
+ th.pos, td.pos {
+	width: 43px;
+}
+
+/* image column width */
+th.image, td.image {
+	display: none;
+	/* width: 90px; */
+}
+
+#import_preview {
+	background-color: #eec;
+	border: 2px solid #fecb00;
+	height: 500px;
+	left: 300px;
+	overflow: auto;
+	padding: 5px;
+	position: absolute;
+	top: 50px;
+	visibility: hidden;
+	width: 400px;
+}
+
+/* tabs */
+.tabs {
+	border-bottom: 2px solid #009900;
+	clear: both;
+	height: 20px;
+	list-style: none;
+}
+
+.tabs li {
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	width: 100px;
+}
+
+.tabs li a {
+	background-color: #006b00;
+	color: #fe9834;
+	display: block;
+	font-weight: bold;
+	height: 18px;
+	padding: 0 3px 0 3px;
+	text-decoration: none;
+}
+
+.tabs a.active {
+	background-color: #009900;
+	color: yellow;
+	height: 20px;
+}
+/* end tabs */
+
+.spacer {
+	padding-right: 30px;
+}
+
+.odd {
+	background: #eec;
+}
+
+.highlight {
+	background: #ab5;
+}
+
+.selected {
+	background: #80ff80;
+}
+
+.red {
+	color: red;
+}
+
+.clearleft {
+	clear: left;
+}
+
+.fn {
+	font-weight: bold;
+}
+.tip {
+	font:12px/14px Arial,Helvetica,sans-serif;
+	border:solid 1px #666666;
+	width:270px;
+	padding:1px;
+	position:absolute; 
+	z-index:100;
+	visibility:hidden;
+	color:#333333;
+	top:20px;
+	left:90px;
+	background-color:#ffffcc;
+/*	layer-background-color:#ffffcc; */
+}
+
+/* Handheld Modifications */
+#popup{
+	font-size: 12px;
+}
+
+/* Highlight current selection */
+:focus { 
+	border: 2px solid #900;
+	background-color: #FFFF9D;
+}
+
+a:focus {
+	border: 0px; 
+}
+
+input[type=submit], input[type=button], button {
+	font-size:15px;
+	height:40px;
+}
+
+input[type=text], input[type=number], input[type=password] {
+	font-size:14px;
+	height:30px;
+}
+
+input[type=checkbox], input[type=radio] {
+	height:25px;
+	width:20px;
+	vertical-align: middle;
+}
+
+a:link {
+	font-size:13pt;
+}
+
+.row {
+	height:30px;
+}
+
+tr.row td{
+	font-size:11pt;
+	word-wrap: break-word;
+}
+
+#headertop {
+    height: 0px;
+}
+
+#nav1 {
+	float: left;
+	display: inline-block;
+}
+#nav2 {
+	float: left;
+	display: inline-block;
+}
+
+#pagenav_main {
+	visibility: visible;
+}
+#pagenav_sub {
+	visibility: visible;
+}
+
+/* Page Tabs */
+.dropnav {
+	clear: both;
+/*	margin-top: 4px; */
+	padding: 4px;
+	height: 35px;
+	position: relative;
+	display: inline-block;
+}
+
+.dropnav li {
+	background: #067500;
+	display: block;
+	float: left;
+	margin-right: 2px;
+	margin-top: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 2px;
+	padding-right: 2px;
+	text-align: center;
+	min-width: 100px;
+}
+
+.dropnav li.active {
+        background: #2D9B27;
+        margin-top: 0;
+        padding-top: 8px;
+}
+
+.dropnav a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+		font-weight: bold;
+        text-decoration: none;
+        color: #AFFA9A;
+}
+/* End Page Tabs */
+
+/* End Handheld Modifications */
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+.visible {
+	display: block;
+	visibility: visible;
+	vertical-align: middle;
+}
+
+.floatleft {
+	float: left
+}
+
+.floatright {
+	float: right
+}
+
+.indent {
+	margin-left: 20px;
+}
+.indent_2 {
+	margin-left: 40px;
+}
+.indent_3 {
+	margin-left: 60px;
+}
+
+/* Modify Logout for small screen */
+#name {
+	display: none;
+	visibility: hidden;
+}
+#logoutspan_mobile {
+	float:right;
+	display:block;
+}
+
+/* Images */
+td.redx {
+    background-image:url(../images/red_x_tablet.png);
+    height:23px;
+    width:23px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* column width*/
+ th.redx {
+	width: 23px;
+}
+
+
+
+/* END Images */

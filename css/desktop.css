@@ -1,0 +1,21 @@
+/*
+color 1: 009900  main green
+color 2: 006b00  dark green
+color 3: fecb00  gold yellow
+color 4: fe9834  orange
+color 5: bfffbf  pale green
+color 6: 80FF80  light green
+color 7: 005899  blue gray
+*/
+
+#mainmenu {
+	padding-bottom: 15px;
+	padding-top: 0px;
+	position: absolute;
+	width: 100%;
+}
+
+#header {
+	height: 90px;
+	position: relative;
+}
