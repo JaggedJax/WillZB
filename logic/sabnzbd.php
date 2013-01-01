@@ -90,7 +90,7 @@ if ($loggedin){
 		foreach ($historyXML->slots->slot as $slot){
 			$history[$num]['fail_message'] = trim($slot->fail_message);
 			if ($slot->completed){
-				$history[$num]['completed'] = date('M nS Y \a\t g:ia', (int)$slot->completed);
+				$history[$num]['completed'] = date('M jS Y \a\t g:ia', (int)$slot->completed);
 			}
 			$history[$num]['nzo_id'] = $slot->nzo_id;
 			$history[$num]['size'] = $slot->size;
