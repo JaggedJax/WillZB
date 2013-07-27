@@ -59,7 +59,7 @@ if ($loggedin){
 		$general['mbleft'] = $queueXML->mbleft;
 		$general['kbpersec'] = $queueXML->kbpersec;
 		$num = 0;
-		if (is_array($queueXML->slots->slot)){
+		if ($queueXML->slots->slot){
 			foreach ($queueXML->slots->slot as $slot){
 				$posList[$num] = $num;
 				$queue[$num]['status'] = $slot->status;
@@ -89,7 +89,7 @@ if ($loggedin){
 		$general['week_size'] = $historyXML->week_size;
 		$num = 0;
 		$details = array();
-		if(is_array($historyXML->slots->slot)){
+		if($historyXML->slots->slot){
 			foreach ($historyXML->slots->slot as $slot){
 				$history[$num]['fail_message'] = trim($slot->fail_message);
 				if ($slot->completed){
