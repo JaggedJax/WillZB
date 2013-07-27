@@ -31,7 +31,7 @@ try{
 	}
 	ob_end_clean();
 }catch(Exception $e){
-	$message = 'Bad response from server';
+	$message = 'Bad or no response from server';
 }
 if($response === null || $error === true){
 	$message = 'Bad response from server';
