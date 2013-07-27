@@ -11,7 +11,7 @@ class sabnzbd_helper{
 	//*************************************************************************
 	// Constructor. Takes smarty object and loads config data
 	//*************************************************************************
-	function __construct($smarty) {
+	function __construct(&$smarty) {
 		$this->username = $smarty->getConfigVars('sab_username');
 		$this->password = base64_decode($smarty->getConfigVars('sab_password'));
 		$this->apikey = $smarty->getConfigVars('sab_apikey');

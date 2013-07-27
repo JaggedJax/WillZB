@@ -24,6 +24,12 @@ $smarty->config_dir = './configs';
 
 $smarty->configLoad($conf_file);
 
+session_start();
+
+if (!isset($_SESSION['user_id'])){
+	exit(0);
+}
+
 /*
 $dbparams['host'] = $smarty->getConfigVars('host');
 $dbparams['user'] = $smarty->getConfigVars('user');
