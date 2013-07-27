@@ -63,7 +63,7 @@ function search_results(response){
 				// Item already found
 				console.log('Already found: '+result[c].NZBNAME+'__'+result[c].USENET_DATE_NOHOUR+'__'+result[c].GROUP+'__'+result[c].CATEGORY);
 				multiple_span = document.getElementById(api_results[result[c].NZBNAME+'__'+result[c].USENET_DATE_NOHOUR+'__'+result[c].GROUP+'__'+result[c].CATEGORY]);
-				multiple_span.innerHTML = '- Duplicates results hidden -';
+				multiple_span.innerHTML = '- Duplicate results hidden -';
 			}
 			
 			else if (result.hasOwnProperty(c) && c != 'sitename' && c != 'message') {
