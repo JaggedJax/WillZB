@@ -58,7 +58,7 @@ if (!in_array($_SESSION['osType'], $osTypes))
 	$_SESSION['osType'] = 'desktop';
 $smarty->assign('osType', $_SESSION['osType']);
 // Remove any osType and sanitize url
-$smarty->assign('server_query', preg_replace('/<|%3C|>|%3E|\'|\"|%22|&osType=desktop|&osType=tablet/', '', $_SERVER['QUERY_STRING']));
+$smarty->assign('server_query', preg_replace('/<|%3C|>|%3E|\'|\"|%22|&osType=desktop|&osType=tablet/', '', @$_SERVER['QUERY_STRING']));
 
 if ($p != 'search_nzb')
 	unset($_SESSION['results']);

@@ -59,20 +59,22 @@ if ($loggedin){
 		$general['mbleft'] = $queueXML->mbleft;
 		$general['kbpersec'] = $queueXML->kbpersec;
 		$num = 0;
-		foreach ($queueXML->slots->slot as $slot){
-			$posList[$num] = $num;
-			$queue[$num]['status'] = $slot->status;
-			$queue[$num]['index'] = $slot->index;
-			$queue[$num]['eta'] = $slot->eta;
-			$queue[$num]['timeleft'] = $slot->timeleft;
-			$queue[$num]['mb'] = $slot->mb;
-			$queue[$num]['mbleft'] = $slot->mbleft;
-			$queue[$num]['filename'] = $slot->filename;
-			$queue[$num]['nzo_id'] = $slot->nzo_id;
-			$queue[$num]['size'] = $slot->size;
-			$queue[$num]['percent'] = $slot->percentage;
-			//$queue[$num]['percent'] = 100-number_format($queue[$num]['mbleft']/$queue[$num]['mb']*100, 2);
-			$num++;
+		if (is_array($queueXML->slots->slot)){
+			foreach ($queueXML->slots->slot as $slot){
+				$posList[$num] = $num;
+				$queue[$num]['status'] = $slot->status;
+				$queue[$num]['index'] = $slot->index;
+				$queue[$num]['eta'] = $slot->eta;
+				$queue[$num]['timeleft'] = $slot->timeleft;
+				$queue[$num]['mb'] = $slot->mb;
+				$queue[$num]['mbleft'] = $slot->mbleft;
+				$queue[$num]['filename'] = $slot->filename;
+				$queue[$num]['nzo_id'] = $slot->nzo_id;
+				$queue[$num]['size'] = $slot->size;
+				$queue[$num]['percent'] = $slot->percentage;
+				//$queue[$num]['percent'] = 100-number_format($queue[$num]['mbleft']/$queue[$num]['mb']*100, 2);
+				$num++;
+			}
 		}
 		$smarty->assign('queue', $queue);
 		$smarty->assign('numqueued', count($queue));
@@ -87,24 +89,26 @@ if ($loggedin){
 		$general['week_size'] = $historyXML->week_size;
 		$num = 0;
 		$details = array();
-		foreach ($historyXML->slots->slot as $slot){
-			$history[$num]['fail_message'] = trim($slot->fail_message);
-			if ($slot->completed){
-				$history[$num]['completed'] = date('M jS Y \a\t g:ia', (int)$slot->completed);
+		if(is_array($historyXML->slots->slot)){
+			foreach ($historyXML->slots->slot as $slot){
+				$history[$num]['fail_message'] = trim($slot->fail_message);
+				if ($slot->completed){
+					$history[$num]['completed'] = date('M jS Y \a\t g:ia', (int)$slot->completed);
+				}
+				$history[$num]['nzo_id'] = $slot->nzo_id;
+				$history[$num]['size'] = $slot->size;
+				$history[$num]['completeness'] = $slot->completeness;
+				$history[$num]['name'] = $slot->name;
+				$history[$num]['nzb_name'] = $slot->nzb_name;
+				$history[$num]['status'] = $slot->status;
+				$nzb = $history[$num]['nzo_id'];
+				foreach ($slot->stage_log->slot as $stage){
+					$name = (String)($stage->name);
+					$details[$name] = $stage->actions->item;
+				}
+				$history[$num]['log'] = $details;
+				$num++;
 			}
-			$history[$num]['nzo_id'] = $slot->nzo_id;
-			$history[$num]['size'] = $slot->size;
-			$history[$num]['completeness'] = $slot->completeness;
-			$history[$num]['name'] = $slot->name;
-			$history[$num]['nzb_name'] = $slot->nzb_name;
-			$history[$num]['status'] = $slot->status;
-			$nzb = $history[$num]['nzo_id'];
-			foreach ($slot->stage_log->slot as $stage){
-				$name = (String)($stage->name);
-				$details[$name] = $stage->actions->item;
-			}
-			$history[$num]['log'] = $details;
-			$num++;
 		}
 		
 		$smarty->assign('history', $history);

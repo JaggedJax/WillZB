@@ -364,6 +364,10 @@ h3 {
 	clear: left;
 }
 
+.clearboth {
+	clear: both;
+}
+
 .fn {
 	font-weight: bold;
 }

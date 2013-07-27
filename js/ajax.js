@@ -2,6 +2,8 @@
  * Functions to make ajax calls
  */
 
+var api_results = { };
+
 function getXMLHttp(){
 	var xmlHttp;
 	if('Microsoft Internet Explorer' == window.navigator.appName) {
@@ -57,7 +59,18 @@ function search_results(response){
 	if (result){
 		var table=document.getElementById("results_table");
 		for (var c in result) {
-			if (result.hasOwnProperty(c) && c != 'sitename' && c != 'message') {
+			if (api_results[result[c].NZBNAME+'__'+result[c].USENET_DATE_NOHOUR+'__'+result[c].GROUP+'__'+result[c].CATEGORY]){
+				// Item already found
+				console.log('Already found: '+result[c].NZBNAME+'__'+result[c].USENET_DATE_NOHOUR+'__'+result[c].GROUP+'__'+result[c].CATEGORY);
+				multiple_span = document.getElementById(api_results[result[c].NZBNAME+'__'+result[c].USENET_DATE_NOHOUR+'__'+result[c].GROUP+'__'+result[c].CATEGORY]);
+				multiple_span.innerHTML = '- Duplicates results hidden -';
+			}
+			
+			else if (result.hasOwnProperty(c) && c != 'sitename' && c != 'message') {
+				// Mark as found
+				var multiples_id = 'found_'+result[c].NZBID;
+				api_results[result[c].NZBNAME+'__'+result[c].USENET_DATE_NOHOUR+'__'+result[c].GROUP+'__'+result[c].CATEGORY] = multiples_id;
+				
 				var col1 = "";
 				if (result[c].IMAGE){
 					col1 = '<img src="'+ result[c].IMAGE +'" width="90" height="130" border="0" alt="Image '+ result[c].NZBID +'">';
@@ -72,7 +85,7 @@ function search_results(response){
 					+"<b>Indexed on:</b> "+result[c].INDEX_DATE_FORMATTED+", "+result[c].INDEX_AGE+" (ago)<br>"
 					+"<b>Size:</b> "+result[c].SIZE+"<br>"
 					+"<b>Group:</b> <a href='"+result[c].SITE_URL+"/browse?g="+result[c].GROUP+"' target='_blank'>"+result[c].GROUP+"</a><br>"
-					+"<br>"
+					+"<div class='indent clearboth' id='"+multiples_id+"'>&nbsp;</div>"
 					+"<span id='addlink_"+result[c].NZBID+"'><a href=\"javascript:enable_div('break_"+result[c].NZBID+"'); add_to_queue('"+result[c].SITE_URL+"','"+result[c].NZBID+"');\">Add To Queue</a></span>&nbsp;&nbsp;|&nbsp;"
 					+"<a href='index.php?p=search_nzb&nzbid="+result[c].NZBID+"&action=download&base_url="+result[c].SITE_URL+"'>Download NZB</a>&nbsp;&nbsp;|&nbsp;"
 					+"<a href='"+result[c].SITE_URL+"/details/"+result[c].NZBID+"' target='_blank'>View on "+result[c].SITE_NAME+"</a>"
@@ -112,12 +125,13 @@ function search_results(response){
 			}
 			
 		}
-		if(result.sitename){
-			document.getElementById(result.sitename).innerHTML = '<b>'+result.sitename+':</b> Complete';
-		}
 		if (result.message){
 			console.log("error message: "+result.message);
 			document.getElementById(result.sitename+'_error').innerHTML = '<b>'+result.sitename+' Error:</b> '+result.message;
+			document.getElementById(result.sitename).innerHTML = '<b>'+result.sitename+':</b> Error';
+		}
+		else if(result.sitename){
+			document.getElementById(result.sitename).innerHTML = '<b>'+result.sitename+':</b> Complete';
 		}
 	}
 }
